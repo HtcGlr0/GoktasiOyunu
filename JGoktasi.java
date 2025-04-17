@@ -16,6 +16,23 @@ class JGoktasi extends Polygon {
 
     public JGoktasi (int [] cokgenXArray, int [] cokgenYArray, int cokgenNokta, int rastXBasXPoz, int rastYBasYPoz){
 
+        super(cokgenXArray,  cokgenYArray, cokgenNokta);
+
+        this.xYonu = (int) (Math.random() * 4 + 1);
+        this.yYonu = (int) (Math.random() * 4 + 1);
+
+        this.uSolXpoz = rastXBasXPoz;
+        this.uSolYPoz = rastYBasYPoz;
+    }
+
+    public void hareketEt(){
+
+        int uSolXpoz = super.xpoints[0];
+        int uSolYPoz = super.xpoints[0];
+
+        if( uSolXpoz < 0  || (uSolXpoz+25) > genislik) xYonu = xYonu;
+        if( uSolXpoz < 0  || (uSolXpoz+25) > yukseklik) yYonu = yYonu;
+
 
     }
 
