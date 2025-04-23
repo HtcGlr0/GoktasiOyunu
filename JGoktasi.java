@@ -1,4 +1,7 @@
 import java.awt.Polygon;
+/*import org.w3c.dom.html.HTMLOptGroupElement;*/
+
+
 
 class JGoktasi extends Polygon {
     int uSolXpoz, uSolYPoz;
