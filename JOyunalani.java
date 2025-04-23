@@ -29,5 +29,18 @@ public class JOyunalani extends JFrame {
         calistir.scheduleAtFixedRate(new EkraniTemizle(this), 0L, 20L, TimeUnit.MILLISECONDS);
         this.setVisible(true); 
     }
+
+    class EkraniTemizle implements Runnable{
+
+        JOyunalani oyunAlani;
+
+        public EkraniTemizle(JOyunalani oyunAlani){
+            this.oyunAlani = oyunAlani;
+        }
+
+        public void run(){
+            oyunAlani.repaint();
+        }
+    }
     
 }
