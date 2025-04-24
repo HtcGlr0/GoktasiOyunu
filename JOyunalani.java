@@ -42,5 +42,24 @@ public class JOyunalani extends JFrame {
             oyunAlani.repaint();
         }
     }
+
+    @SuppressWarnings("serial")
+
+    class oyunCizmePanel extends JComponent{
+
+        public static ArrayList<Goktasi> GokTaslari = new ArrayList<Goktasi>();
+
+        int[] cokgenXArray = Goktasi.hbCokgenXArray;
+        int[] cokgenYArray = Goktasi.hbCokgenYArray;
+        
+        int genislik = JOyunalani.oyunAlaniGenislik;
+        int yukseklik = JOyunalani.oyunAlaniYukseklik;
+
+        public oyunCizmePanel(){
+            
+        }
+    }
+
+
     
 }
