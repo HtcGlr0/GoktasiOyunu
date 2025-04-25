@@ -12,6 +12,8 @@ class JGoktasi extends Polygon {
     int genislik = JOyunalani.oyunAlaniGenislik;
     int yukseklik = JOyunalani.oyunAlaniYukseklik;
 
+    
+
     int [] cokgenXArray , cokgenYArray;
     
     public static int[] hbCokgenXArray = {10,17,26,34,27,36,26,14,8,1,5,1,10};
