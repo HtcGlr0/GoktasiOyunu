@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.color.*;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -23,12 +24,15 @@ public class JOyunalani extends JFrame {
         this.setTitle("ProPhpHocam Java Uzay Oyunu");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        oyunCizmePanel oyunPanel = new oyunCizmePanel();
+
         this.add(oyunPanel, BorderLayout.CENTER);
 
         ScheduledThreadPoolExecutor calistir = new ScheduledThreadPoolExecutor(5);
         calistir.scheduleAtFixedRate(new EkraniTemizle(this), 0L, 20L, TimeUnit.MILLISECONDS);
         this.setVisible(true); 
     }
+}
 
     class EkraniTemizle implements Runnable{
 
@@ -56,9 +60,33 @@ public class JOyunalani extends JFrame {
         int yukseklik = JOyunalani.oyunAlaniYukseklik;
 
         public oyunCizmePanel(){
+
+            for(int i=0 ; i<50 ; i++){
+
+                int rastXBasPoz = (int) (Math.random() * (JOyunalani.oyunAlaniGenislik - 40) + 1);
+                int rastYBasPoz = (int) (Math.random() * (JOyunalani.oyunAlaniYukseklik - 40) + 1);
+
+                GokTaslari.add(new Goktasi(Goktasi.getCokgenXArray(rastXBasPoz), Goktasi.getCokgenYArray(rastYBasPoz), 13, rastXBasPoz, rastYBasPoz));
+            }
             
         }
-    }
+
+        public void paint(Graphics g){
+            Graphics2D grafikAyarlari = (Graphics2D) g;
+
+            grafikAyarlari.setColor(Color.BLACK);
+            grafikAyarlari.fillRect(0, 0, getWidth(), getHeight());
+
+            grafikAyarlari.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+            grafikAyarlari.setPaint(Color.WHITE);
+
+            for(Goktasi tas : GokTaslari){
+                tas.hareketEt();
+                grafikAyarlari.draw(tas);
+            }
+        }
+    
 
 
     
