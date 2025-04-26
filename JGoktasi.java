@@ -1,5 +1,6 @@
 import java.awt.Polygon;
 /*import org.w3c.dom.html.HTMLOptGroupElement;*/
+import java.util.ArrayList;
 
 
 
@@ -12,7 +13,7 @@ class JGoktasi extends Polygon {
     int genislik = JOyunalani.oyunAlaniGenislik;
     int yukseklik = JOyunalani.oyunAlaniYukseklik;
 
-    
+     public static ArrayList<Goktasi> GokTaslari = new ArrayList<Goktasi>();
 
     int [] cokgenXArray , cokgenYArray;
     
@@ -65,8 +66,5 @@ class JGoktasi extends Polygon {
               }
         return rastCokgenYArray;
 
-    }
-
-
-    
+    } 
 }
