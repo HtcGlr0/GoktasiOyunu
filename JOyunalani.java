@@ -57,7 +57,7 @@ public class JOyunalani extends JFrame {
         int[] cokgenYArray = Goktasi.hbCokgenYArray;
         
         int genislik = JOyunalani.oyunAlaniGenislik;
-        int yukseklik = JOyunalani.oyunAlaniYukseklik;
+        int yukseklik = JOyunalani.oyunAlaniYukseklik; 
 
         public oyunCizmePanel(){
 
@@ -85,9 +85,5 @@ public class JOyunalani extends JFrame {
                 tas.hareketEt();
                 grafikAyarlari.draw(tas);
             }
-        }
-    
-
-
-    
+        } 
 }
