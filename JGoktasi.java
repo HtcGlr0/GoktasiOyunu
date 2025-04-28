@@ -13,12 +13,19 @@ class JGoktasi extends Polygon {
     int genislik = JOyunalani.oyunAlaniGenislik;
     int yukseklik = JOyunalani.oyunAlaniYukseklik;
 
-     public static ArrayList<Goktasi> GokTaslari = new ArrayList<Goktasi>();
+     public static ArrayList<JGoktasi> GokTaslari = new ArrayList<JGoktasi>();
 
     int [] cokgenXArray , cokgenYArray;
     
-    public static int[] hbCokgenXArray = {10,17,26,34,27,36,26,14,8,1,5,1,10};
-    public static int[] hbCokgenYArray = {10,17,26,34,27,36,26,14,8,1,5,1,10};
+    public static int[] hbCokgenXArray = {
+        10, 20, 35, 50, 55, 50, 40, 35, 30, 20, 15, 5, 0
+    };
+    
+    public static int[] hbCokgenYArray = {
+        0, 5, 0, 10, 25, 35, 45, 50, 55, 50, 40, 20, 10
+    };
+    
+
 
     public JGoktasi (int [] cokgenXArray, int [] cokgenYArray, int cokgenNokta, int rastXBasPoz, int rastYBasPoz){
 

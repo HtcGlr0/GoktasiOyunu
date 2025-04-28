@@ -51,10 +51,10 @@ public class JOyunalani extends JFrame {
 
     class oyunCizmePanel extends JComponent{
 
-        public static ArrayList<Goktasi> GokTaslari = new ArrayList<Goktasi>();
+        public static ArrayList<JGoktasi> GokTaslari = new ArrayList<JGoktasi>();
 
-        int[] cokgenXArray = Goktasi.hbCokgenXArray;
-        int[] cokgenYArray = Goktasi.hbCokgenYArray;
+        int[] cokgenXArray = JGoktasi.hbCokgenXArray;
+        int[] cokgenYArray = JGoktasi.hbCokgenYArray;
         
         int genislik = JOyunalani.oyunAlaniGenislik;
         int yukseklik = JOyunalani.oyunAlaniYukseklik; 
@@ -66,7 +66,7 @@ public class JOyunalani extends JFrame {
                 int rastXBasPoz = (int) (Math.random() * (JOyunalani.oyunAlaniGenislik - 40) + 1);
                 int rastYBasPoz = (int) (Math.random() * (JOyunalani.oyunAlaniYukseklik - 40) + 1);
 
-                GokTaslari.add(new Goktasi(Goktasi.getCokgenXArray(rastXBasPoz), Goktasi.getCokgenYArray(rastYBasPoz), 13, rastXBasPoz, rastYBasPoz));
+                GokTaslari.add(new JGoktasi(JGoktasi.getCokgenXArray(rastXBasPoz), JGoktasi.getCokgenYArray(rastYBasPoz), 13, rastXBasPoz, rastYBasPoz));
             }
             
         }
@@ -81,7 +81,7 @@ public class JOyunalani extends JFrame {
 
             grafikAyarlari.setPaint(Color.WHITE);
 
-            for(Goktasi tas : GokTaslari){
+            for(JGoktasi tas : GokTaslari){
                 tas.hareketEt();
                 grafikAyarlari.draw(tas);
             }
