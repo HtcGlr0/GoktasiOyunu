@@ -26,6 +26,36 @@ public class JOyunalani extends JFrame {
         this.setTitle("ProPhpHocam Java Uzay Oyunu");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        //keylistener tus takip
+        addKeyListener(new KeyListener(){
+
+            @Override
+            public void keyPressed(KeyEvent e){
+                //TODO Auto-generated method stub
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e){
+                if(e.getKeyCode() == 87){
+                    System.out.println("İleri");
+                }
+                else
+                   if(e.getKeyCode() == 83){
+                    System.out.println("Geri");
+
+                   }
+
+
+            }
+
+            @Override 
+            public void keyTyped(KeyEvent e){
+                //TODO Auto-generated method stub
+            }
+
+        });
+
+
         oyunCizmePanel oyunPanel = new oyunCizmePanel();
 
         this.add(oyunPanel, BorderLayout.CENTER);
@@ -57,6 +87,8 @@ public class JOyunalani extends JFrame {
 
         int[] cokgenXArray = JGoktasi.hbCokgenXArray;
         int[] cokgenYArray = JGoktasi.hbCokgenYArray;
+
+        JUzaygemisi gemi = new JUzaygemisi(); 
         
         int genislik = JOyunalani.oyunAlaniGenislik;
         int yukseklik = JOyunalani.oyunAlaniYukseklik; 
@@ -87,5 +119,8 @@ public class JOyunalani extends JFrame {
                 tas.hareketEt();
                 grafikAyarlari.draw(tas);
             }
+
+            gemi.hareketEt();
+            grafikAyarlari.draw(gemi);
         } 
 }
