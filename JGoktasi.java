@@ -16,10 +16,11 @@ class JGoktasi extends Polygon {
      public static ArrayList<JGoktasi> GokTaslari = new ArrayList<JGoktasi>();
 
     int [] cokgenXArray , cokgenYArray;
+
+
+    public static int[] hbCokgenXArray = {45, 54, 63, 72, 81, 90, 84, 78, 72, 63, 54, 48, 42};
     
-    public static int[] hbCokgenXArray = {10, 20, 35, 50, 55, 50, 40, 35, 30, 20, 15, 5, 0};
-    
-    public static int[] hbCokgenYArray = {0, 5, 0, 10, 25, 35, 45, 50, 55, 50, 40, 20, 10};
+    public static int[] hbCokgenYArray = {15, 12, 9, 12, 15, 21, 27, 33, 39, 42, 45, 42, 36};
     
 
 
