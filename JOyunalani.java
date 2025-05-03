@@ -7,6 +7,9 @@ import java.awt.RenderingHints;
 import java.util.ArrayList;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+
+import java.awt.geom.AffineTransform;
+
 import javax.swing.JComponent; 
 import javax.swing.JFrame;
 import java.awt.event.KeyEvent;
@@ -16,6 +19,10 @@ import java.awt.event.KeyListener;
 public class JOyunalani extends JFrame {
     public static int oyunAlaniGenislik = 1000;
     public static int oyunAlaniYukseklik = 800;
+
+    public static boolean tus = false;
+    public static int tusKodu;
+
 
     public static void main(String[] args) {
         new JOyunalani();
@@ -31,11 +38,6 @@ public class JOyunalani extends JFrame {
 
             @Override
             public void keyPressed(KeyEvent e){
-                //TODO Auto-generated method stub
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e){
                 if(e.getKeyCode() == 87){
                     System.out.println("İleri");
                 }
@@ -44,16 +46,33 @@ public class JOyunalani extends JFrame {
                     System.out.println("Geri");
 
                    }
+                   else
+                   if(e.getKeyCode() == 68){
+                    System.out.println("Sağa Döndü");
+                    tusKodu = e.getKeyCode();
+                    tus = true;
 
+                   }
+                   else
+                   if(e.getKeyCode() == 65){
+                    System.out.println("Sola Döndü");
+                    tusKodu = e.getKeyCode();
+                    tus = true;
 
+                   }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e){
+                tus = false;
             }
 
             @Override 
             public void keyTyped(KeyEvent e){
-                //TODO Auto-generated method stub
-            }
 
-        });
+            }
+        }
+        );
 
 
         oyunCizmePanel oyunPanel = new oyunCizmePanel();
@@ -108,6 +127,8 @@ public class JOyunalani extends JFrame {
         public void paint(Graphics g){
             Graphics2D grafikAyarlari = (Graphics2D) g;
 
+            AffineTransform id = new AffineTransform();
+
             grafikAyarlari.setColor(Color.BLACK);
             grafikAyarlari.fillRect(0, 0, getWidth(), getHeight());
 
@@ -120,7 +141,19 @@ public class JOyunalani extends JFrame {
                 grafikAyarlari.draw(tas);
             }
 
+            if(JOyunalani.tus == true && JOyunalani.tusKodu == 68){
+                JUzaygemisi.yonAcisi += 10;
+            }
+            else if(JOyunalani.tus == true && JOyunalani.tusKodu == 65){
+                JUzaygemisi.yonAcisi -= 10;
+            }
+
+
             gemi.hareketEt();
+
+            grafikAyarlari.setTransform(id);
+            grafikAyarlari.translate(JOyunalani.oyunAlaniGenislik/2, JOyunalani.oyunAlaniYukseklik/2);
+            grafikAyarlari.rotate(Math.toRadians(JUzaygemisi.yonAcisi));
             grafikAyarlari.draw(gemi);
         } 
 }
