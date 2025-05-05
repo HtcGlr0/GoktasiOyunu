@@ -120,6 +120,10 @@ public class JOyunalani extends JFrame {
                 int rastYBasPoz = (int) (Math.random() * (JOyunalani.oyunAlaniYukseklik - 40) + 1);
 
                 GokTaslari.add(new JGoktasi(JGoktasi.getCokgenXArray(rastXBasPoz), JGoktasi.getCokgenYArray(rastYBasPoz), 13, rastXBasPoz, rastYBasPoz));
+
+                JGoktasi.GokTaslari = GokTaslari;
+
+
             }
             
         }
