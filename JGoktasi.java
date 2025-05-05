@@ -1,6 +1,7 @@
 import java.awt.Polygon;
 /*import org.w3c.dom.html.HTMLOptGroupElement;*/
 import java.util.ArrayList;
+import java.awt.Rectangle;
 
 
 
@@ -9,6 +10,9 @@ class JGoktasi extends Polygon {
 
     int xYonu = 1;
     int yYonu = 1;
+    
+    int goktasiGenislik = 26;
+    int goktasiYukseklik = 31;
 
     int genislik = JOyunalani.oyunAlaniGenislik;
     int yukseklik = JOyunalani.oyunAlaniYukseklik;
@@ -34,6 +38,15 @@ class JGoktasi extends Polygon {
         this.uSolXpoz = rastXBasPoz;
         this.uSolYPoz = rastYBasPoz;
     }
+    //Taşları çarptıracağız ve sekecek
+    public Rectangle getSekme(){
+        return new Rectangle(super.xpoints[0], super.ypoints[0], goktasiGenislik, goktasiYukseklik);
+    }
+
+
+
+
+
     //Göktaşı hareket ettirme metodu
     public void hareketEt(){
 
