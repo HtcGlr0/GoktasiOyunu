@@ -50,6 +50,25 @@ class JGoktasi extends Polygon {
     //Göktaşı hareket ettirme metodu
     public void hareketEt(){
 
+        Rectangle tasKontrol = this.getSekme();
+
+        for(JGoktasi tas : GokTaslari){
+            Rectangle digerTas = tas.getSekme();
+
+            if(tas != this && digerTas.intersects(tasKontrol)){
+
+                int rastXYonu = this.xYonu;
+                int rastYYonu = this.yYonu;
+
+                this.xYonu = tas.xYonu;
+                this.yYonu = tas.yYonu;
+
+                tas.xYonu = rastXYonu;
+                tas.yYonu = rastYYonu;
+            }
+        }
+
+
         int uSolXpoz = super.xpoints[0];
         int uSolYPoz = super.xpoints[0];
 
