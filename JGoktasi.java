@@ -22,9 +22,9 @@ class JGoktasi extends Polygon {
     int [] cokgenXArray , cokgenYArray;
 
 
-    public static int[] hbCokgenXArray = {45, 54, 63, 72, 81, 90, 84, 78, 72, 63, 54, 48, 42};
+    public static int[] hbCokgenXArray = {10,17,26,34,27,36,26,14,8,1,5,1,10};
     
-    public static int[] hbCokgenYArray = {15, 12, 9, 12, 15, 21, 27, 33, 39, 42, 45, 42, 36};
+    public static int[] hbCokgenYArray = {0,5,1,8,13,20,31,28,31,22,16,7,0};
     
 
 
