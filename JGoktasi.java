@@ -70,7 +70,7 @@ class JGoktasi extends Polygon {
 
 
         int uSolXpoz = super.xpoints[0];
-        int uSolYPoz = super.xpoints[0];
+        int uSolYPoz = super.ypoints[0];
 
         if( uSolXpoz < 0  || (uSolXpoz+25) > genislik) xYonu = -xYonu;
         if( uSolXpoz < 0  || (uSolXpoz+50) > yukseklik) yYonu = -yYonu;
