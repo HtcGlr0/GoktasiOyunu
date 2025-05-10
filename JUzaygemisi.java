@@ -14,7 +14,7 @@ public class JUzaygemisi extends Polygon {
     public static int[] cokgenXArray = {-13, 14, -13, -5, -13};
     public static int[] cokgenYArray = {-15, 0, 15, 0, -15};
 
-    private int gemiGenislik = 27, gemiYukseklil = 30;
+    private int gemiGenislik = 27, gemiYukseklik = 30;
 
     private double uSolXPoz = getXOrtala() + this.cokgenXArray[0];
     private double uSolYPoz = getYOrtala() + this.cokgenYArray[0];
@@ -39,5 +39,24 @@ public class JUzaygemisi extends Polygon {
 
     public void setUSolXPoz(double usXPoz){this.uSolXPoz = usXPoz;}
     public void setUSolYPoz(double usYPoz){this.uSolYPoz = usYPoz;}
+
+    public int getGemiGenislik(){return gemiGenislik;}
+    public int getGemiYukseklik(){return gemiYukseklik;}
+
+    public double getXHiz(){return xHiz;}
+    public double getYHiz(){return yHiz;}
+
+    public void setXHiz(double xHiz){this.xHiz = xHiz;}
+    public void setYHiz(double yHiz){this.yHiz = yHiz;}
+
+    public void xHizArttir(double xHizArt){this.xHiz += xHizArt;}
+    public void yHizArttir(double yHizArt){this.yHiz += yHizArt;}
+
+    public void xHizAzalt(double xHizAz){this.xHiz -= xHiz;}
+    public void yHizAzalt(double yHizAz){this.yHiz -= yHiz;}
+    
+
+
+
     
 }
