@@ -52,9 +52,16 @@ public class JUzaygemisi extends Polygon {
     public void xHizArttir(double xHizArt){this.xHiz += xHizArt;}
     public void yHizArttir(double yHizArt){this.yHiz += yHizArt;}
 
-    public void xHizAzalt(double xHizAz){this.xHiz -= xHiz;}
-    public void yHizAzalt(double yHizAz){this.yHiz -= yHiz;}
+    public void xHizAzalt(double xHizAz){this.xHiz -= xHizAz;}
+    public void yHizAzalt(double yHizAz){this.yHiz -= yHizAz;}
+
+    public void setHareketAcisi(double hareketAcisi) {this.hareketAcisi = hareketAcisi;}
+    public double setHareketAcisi(){return hareketAcisi;}
+
+    public void setHareketAcisiArttir(double hareketAcisi) {this.hareketAcisi += hareketAcisi;}
     
+
+
 
 
 
