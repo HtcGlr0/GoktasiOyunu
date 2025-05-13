@@ -1,4 +1,5 @@
 import java.awt.Polygon;
+import java.awt.Rectangle;
 
 @SuppressWarnings("serial")
 public class JUzaygemisi extends Polygon {
@@ -60,6 +61,43 @@ public class JUzaygemisi extends Polygon {
 
     public void setHareketAcisiArttir(double hareketAcisi) {this.hareketAcisi += hareketAcisi;}
     
+    public double gemiXHareketAcisi(double xHareketAcisi){
+        return (double) (Math.cos(xHareketAcisi * Math.PI/180));
+    }
+
+    public double gemiYHareketAcisi(double yHareketAcisi){
+        return (double) (Math.sin(yHareketAcisi * Math.PI/180));
+    }
+
+    public double getYonAcisi(){return yonAcisi;}
+
+    public void yonAcisiArttir(){
+        if(getYonAcisi() >= 355){yonAcisi = 0;}
+        else{yonAcisi += 5;}
+    }
+
+     public void yonAcisiAzalt(){
+        if(getYonAcisi() < 0){yonAcisi = 355;}
+        else{yonAcisi -= 5;}
+    }
+
+    public Rectangle getSekme(){
+        return new Rectangle((int) getXOrtala() - 14, (int) getYOrtala() - 14, getGemiGenislik(), getGemiYukseklik());
+
+    }
+
+    public double getBurunX(){
+        return this.getXOrtala() + Math.cos(yonAcisi) * 14;
+    }
+
+    public double getBurunY(){
+        return this.getYOrtala() + Math.sin(yonAcisi) * 14;
+    }
+
+
+
+
+
 
 
 
