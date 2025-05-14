@@ -94,14 +94,25 @@ public class JUzaygemisi extends Polygon {
         return this.getYOrtala() + Math.sin(yonAcisi) * 14;
     }
 
+    public void hareketEt(){
+        this.xPozArttir(this.getXHiz());
+        if(this.getXOrtala() < 0){
+            this.setXOrtala(oAGenislik);
+        }
+        else 
+            if(this.getXOrtala() > oAGenislik){
+                this.setXOrtala(0);
+            }
+
+        this.yPozArttir(this.getYHiz());
+        if(this.getYOrtala() < 0){
+            this.setYOrtala(oAYukseklik);
+        }
+        else 
+            if(this.getYOrtala() > oAYukseklik){
+                this.setYOrtala(0);
+            }
+        }   
 
 
-
-
-
-
-
-
-
-    
 }
