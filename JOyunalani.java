@@ -40,10 +40,14 @@ public class JOyunalani extends JFrame {
             public void keyPressed(KeyEvent e){
                 if(e.getKeyCode() == 87){
                     System.out.println("İleri");
+                    tusKodu = e.getKeyCode();
+                    tus = true;
                 }
                 else
                    if(e.getKeyCode() == 83){
                     System.out.println("Geri");
+                    tusKodu = e.getKeyCode();
+                    tus = true;
 
                    }
                    else
@@ -146,18 +150,29 @@ public class JOyunalani extends JFrame {
             }
 
             if(JOyunalani.tus == true && JOyunalani.tusKodu == 68){
-                JUzaygemisi.yonAcisi += 10;
+                gemi.yonAcisiArttir();
+                System.out.println("Gemi açisi: "+ gemi.getYonAcisi());
             }
+
             else if(JOyunalani.tus == true && JOyunalani.tusKodu == 65){
-                JUzaygemisi.yonAcisi -= 10;
+                gemi.yonAcisiAzalt();
+                System.out.println("Gemi açisi: "+ gemi.getYonAcisi());
+            }
+
+            else if(JOyunalani.tus == true && JOyunalani.tusKodu == 87){
+                gemi.setHareketAcisi(gemi.getYonAcisi());
+
+                gemi.xHizArttir(gemi.gemiXHareketAcisi(gemi.getHareketAcisi()) * 0.1);
+
+                gemi.yHizArttir(gemi.gemiYHareketAcisi(gemi.getHareketAcisi()) * 0.1);
             }
 
 
             gemi.hareketEt();
 
             grafikAyarlari.setTransform(id);
-            grafikAyarlari.translate(JOyunalani.oyunAlaniGenislik/2, JOyunalani.oyunAlaniYukseklik/2);
-            grafikAyarlari.rotate(Math.toRadians(JUzaygemisi.yonAcisi));
+            grafikAyarlari.translate(gemi.getXOrtala(), gemi.getYOrtala());
+            grafikAyarlari.rotate(Math.toRadians(gemi.getYonAcisi()));
             grafikAyarlari.draw(gemi);
         } 
 }
