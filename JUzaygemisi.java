@@ -57,7 +57,7 @@ public class JUzaygemisi extends Polygon {
     public void yHizAzalt(double yHizAz){this.yHiz -= yHizAz;}
 
     public void setHareketAcisi(double hareketAcisi) {this.hareketAcisi = hareketAcisi;}
-    public double setHareketAcisi(){return hareketAcisi;}
+    public double getHareketAcisi(){return hareketAcisi;}
 
     public void setHareketAcisiArttir(double hareketAcisi) {this.hareketAcisi += hareketAcisi;}
     
