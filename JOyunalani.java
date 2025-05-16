@@ -159,12 +159,19 @@ public class JOyunalani extends JFrame {
                 System.out.println("Gemi açisi: "+ gemi.getYonAcisi());
             }
 
+            else if(JOyunalani.tus == true && JOyunalani.tusKodu == 83){
+               gemi.setHareketAcisi(gemi.getYonAcisi());
+
+               gemi.xHizAzalt(gemi.gemiXHareketAcisi(gemi.getHareketAcisi()) * 1.0);
+               gemi.yHizAzalt(gemi.gemiYHareketAcisi(gemi.getHareketAcisi()) * 1.0);
+}
+
+
             else if(JOyunalani.tus == true && JOyunalani.tusKodu == 87){
                 gemi.setHareketAcisi(gemi.getYonAcisi());
 
-                gemi.xHizArttir(gemi.gemiXHareketAcisi(gemi.getHareketAcisi()) * 0.1);
-
-                gemi.yHizArttir(gemi.gemiYHareketAcisi(gemi.getHareketAcisi()) * 0.1);
+                gemi.xHizArttir(gemi.gemiXHareketAcisi(gemi.getHareketAcisi()) * 1.0);
+                gemi.yHizArttir(gemi.gemiYHareketAcisi(gemi.getHareketAcisi()) * 1.0);
             }
 
 
