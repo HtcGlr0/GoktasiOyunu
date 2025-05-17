@@ -17,8 +17,8 @@ import java.awt.event.KeyListener;
 
 
 public class JOyunalani extends JFrame {
-    public static int oyunAlaniGenislik = 1000;
-    public static int oyunAlaniYukseklik = 800;
+    public static int oyunAlaniGenislik = 800;
+    public static int oyunAlaniYukseklik = 700;
 
     public static boolean tus = false;
     public static int tusKodu;
