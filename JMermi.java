@@ -1,4 +1,5 @@
 import java.awt.Polygon;
+import java.awt.Rectangle;
 
 
 @SuppressWarnings("serial")
@@ -43,10 +44,46 @@ public class JMermi extends Polygon {
     public double getXHiz(){return xHiz;}
     public double getYHiz(){return yHiz;}
 
-    public void getXHiz(double xHiz){this.xHiz = xHiz;}
-    public void getYHiz(double yHiz){this.yHiz = yHiz;}
+    public void setXHiz(double xHiz){this.xHiz = xHiz;}
+    public void setYHiz(double yHiz){this.yHiz = yHiz;}
 
     public int getGenislik(){return mermiGenislik;}
     public int getYukseklik(){return mermiYukseklik;}
+
+    public void setHareketAcisi(double hareketAcisi){this.hareketAcisi = hareketAcisi;}
+    public double getHareketAcisi(){return hareketAcisi;}
+
+    public Rectangle getSekme(){
+        return new Rectangle((int) getXOrtala()-6, (int) getYOrtala()-6, getGenislik(), getYukseklik());
+    }
+
+    public double mermiXHareketAcisi(double xHareketAcisi){
+        return(double) (Math.cos(xHareketAcisi * Math.PI/180));
+    }
+
+    public double mermiYHareketAcisi(double yHareketAcisi){
+        return(double) (Math.sin(yHareketAcisi * Math.PI/180));
+    }
+
+    public void hareketEt(){
+        if(this.ekranda){
+            this.xPozisyonDegistir(this.getXHiz());
+            if(this.getXOrtala() < 0){
+                this.ekranda = false;
+            }
+            else if (this.getXOrtala() > oAGenislik) {
+                this.ekranda = false;  
+            }
+
+            this.yPozisyonDegistir(this.getYHiz());
+            if(this.getYOrtala() < 0){
+                this.ekranda = false;
+            }
+            else if (this.getYOrtala() > oAYukseklik) {
+                this.ekranda = false;  
+            }
+        }
+    }
+
     
 }
