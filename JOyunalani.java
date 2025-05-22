@@ -23,6 +23,8 @@ public class JOyunalani extends JFrame {
     public static boolean tus = false;
     public static int tusKodu;
 
+    public static ArrayList<JMermi> mermiler = new ArrayList<JMermi>();
+
 
     public static void main(String[] args) {
         new JOyunalani();
@@ -62,6 +64,9 @@ public class JOyunalani extends JFrame {
                     System.out.println("Sola Döndü");
                     tusKodu = e.getKeyCode();
                     tus = true;
+                   }else
+                   if(e.getKeyCode() == KeyEvent.VK_ENTER){
+                    mermiler.add(new JMermi(oyunCizmePanel.gemi.getGemiBurunX(), oyunCizmePanel.gemi.getGemiBurunY(), oyunCizmePanel.gemi.getYonAcisi()));
 
                    }
             }
@@ -111,7 +116,7 @@ public class JOyunalani extends JFrame {
         int[] cokgenXArray = JGoktasi.hbCokgenXArray;
         int[] cokgenYArray = JGoktasi.hbCokgenYArray;
 
-        JUzaygemisi gemi = new JUzaygemisi(); 
+        static JUzaygemisi gemi = new JUzaygemisi(); 
         
         int genislik = JOyunalani.oyunAlaniGenislik;
         int yukseklik = JOyunalani.oyunAlaniYukseklik; 
@@ -181,5 +186,15 @@ public class JOyunalani extends JFrame {
             grafikAyarlari.translate(gemi.getXOrtala(), gemi.getYOrtala());
             grafikAyarlari.rotate(Math.toRadians(gemi.getYonAcisi()));
             grafikAyarlari.draw(gemi);
+
+            for(JMermi mermim : JOyunalani.mermiler){
+                mermim.hareketEt();
+                if(mermim.ekranda) {
+                    grafikAyarlari.setTransform(id);
+                    grafikAyarlari.translate(mermim.getXOrtala(), mermim.getYOrtala());
+                    grafikAyarlari.draw(mermim);
+                    
+                }
+            }
         } 
 }
