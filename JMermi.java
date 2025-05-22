@@ -26,7 +26,7 @@ public class JMermi extends Polygon {
         this.ortalaX = ortalaX;
         this.ortalaY = ortalaY;
         this.hareketAcisi = hareketAcisi;
-
+        this.ekranda = true;
         this.setXHiz(this.mermiXHareketAcisi(hareketAcisi)*10);
         this.setYHiz(this.mermiYHareketAcisi(hareketAcisi)*10);
 
