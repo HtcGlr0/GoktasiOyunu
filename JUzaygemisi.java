@@ -86,11 +86,11 @@ public class JUzaygemisi extends Polygon {
 
     }
 
-    public double getBurunX(){
+    public double getGemiBurunX(){
         return this.getXOrtala() + Math.cos(yonAcisi) * 14;
     }
 
-    public double getBurunY(){
+    public double getGemiBurunY(){
         return this.getYOrtala() + Math.sin(yonAcisi) * 14;
     }
 
