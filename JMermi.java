@@ -10,8 +10,9 @@ public class JMermi extends Polygon {
 
     private double ortalaX = 0, ortalaY = 0;
 
-    public static int[] cokgenXArray = {-3, 3, 3, -3, -3};
-    public static int[] cokgenYArray = {-3, 3, 3, -3, -3};
+    public static int[] cokgenXArray = {-2, 2, 2, -2, -2};
+    public static int[] cokgenYArray = {-2, -2, 2, 2, -2};
+
 
     private int mermiGenislik = 6, mermiYukseklik = 6;
 
