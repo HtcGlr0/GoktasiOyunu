@@ -61,12 +61,12 @@ public class JUzaygemisi extends Polygon {
 
     public void setHareketAcisiArttir(double hareketAcisi) {this.hareketAcisi += hareketAcisi;}
     
-    public double gemiXHareketAcisi(double xHareketAcisi){
-        return (double) (Math.cos(xHareketAcisi * Math.PI/180));
+    public double gemiXHareketAcisi(double aci){
+        return Math.cos(Math.toRadians(aci));
     }
 
-    public double gemiYHareketAcisi(double yHareketAcisi){
-        return (double) (Math.sin(yHareketAcisi * Math.PI/180));
+    public double gemiYHareketAcisi(double aci){
+        return Math.sin(Math.toRadians(aci));
     }
 
     public double getYonAcisi(){return yonAcisi;}
@@ -87,12 +87,11 @@ public class JUzaygemisi extends Polygon {
     }
 
     public double getGemiBurunX(){
-        return this.getXOrtala() + Math.cos(yonAcisi) * 14;
+        return this.getXOrtala() + Math.cos(Math.toRadians(yonAcisi)) * 14;
     }
 
     public double getGemiBurunY(){
-        return this.getYOrtala() + Math.sin(yonAcisi) * 14;
-    }
+        return this.getYOrtala() + Math.sin(Math.toRadians(yonAcisi)) * 14;    }
 
     public void hareketEt(){
         this.xPozArttir(this.getXHiz());

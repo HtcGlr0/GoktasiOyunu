@@ -57,12 +57,12 @@ public class JMermi extends Polygon {
         return new Rectangle((int) getXOrtala()-6, (int) getYOrtala()-6, getGenislik(), getYukseklik());
     }
 
-    public double mermiXHareketAcisi(double xHareketAcisi){
-        return(double) (Math.cos(xHareketAcisi * Math.PI/180));
+    public double mermiXHareketAcisi(double aci){
+        return Math.cos(Math.toRadians(aci));
     }
 
-    public double mermiYHareketAcisi(double yHareketAcisi){
-        return(double) (Math.sin(yHareketAcisi * Math.PI/180));
+    public double mermiYHareketAcisi(double aci){
+        return Math.sin(Math.toRadians(aci));
     }
 
     public void hareketEt(){
