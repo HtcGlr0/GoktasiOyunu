@@ -16,6 +16,12 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 
+import javax.sound.sampled.*;
+import java.io.IOException;
+import java.net.*;
+import javax.swing.*;
+
+
 public class JOyunalani extends JFrame {
     public static int oyunAlaniGenislik = 800;
     public static int oyunAlaniYukseklik = 700;
